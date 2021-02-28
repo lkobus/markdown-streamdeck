@@ -157,7 +157,7 @@ Columns position is setted in ColumnPosition Attribute inside each CellItem. If 
 ColumnPosition: 1
 ```
 
-> Remember this is a table parsed yaml, so all cell items should have the same ammount of CellItems.
+> Remember this is a table parsed yaml, so all cell items should have the same ammount of properties, remember each child of Cellitem is a property that reflects a icon, link or text.
 
 ### Contact?
 
