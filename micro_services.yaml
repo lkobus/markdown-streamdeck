@@ -1,0 +1,29 @@
+Services:
+  - streamdeck-builder:
+      Lang:        
+        IconUriPath: '/res'
+        IconFileName: 'powershell-icon.svg'
+        Tooltip: "Powershell"      
+      Git:
+        ColumnPosition: 1
+        IconUriPath: "/res"
+        IconFileName: 'Git_icon.svg'
+        Tooltip: "Source Repository"
+        Hyperlink: "https://github.com/lkobus/markdown-streamdeck"
+      PoweredBy:       
+        ColumnPosition: 2
+        Description: "~Dashman"  
+Libs:
+  - powershell-yaml:
+      Lang:
+        IconUriPath: '/res'
+        IconFileName: 'powershell-icon.svg'
+        Tooltip: "Powershell"       
+      Git:      
+        IconUriPath: "/res"
+        IconFileName: 'Git_icon.svg'
+        Tooltip: "Source Repository"
+        Hyperlink: "https://github.com/cloudbase/powershell-yaml"
+      Name:
+        Description: "powershell-yaml"
+      
