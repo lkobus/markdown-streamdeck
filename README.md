@@ -119,9 +119,43 @@ See the illustration bellow:
 
 ---
 
----
 
+## Yaml Structure 
+**The yaml structure should always have**
+```yaml
+Services:
+    - CellItem
+    ...
+Libs
+    - CellItem
+    ...
+```
 
+And the supported types inside CellItem are:
+```yaml
+Libs:
+  - powershell-yaml:
+      Lang: #When you have a icon without hyperlink
+        IconUriPath: 'https://lkobus.github.io/markdown-streamdeck/res/' 
+        IconFileName: 'powershell-icon.svg'
+        Tooltip: "Powershell"       
+      Git:      
+        #When you have a icon with hyperlink
+        IconUriPath: "https://lkobus.github.io/markdown-streamdeck/res/"
+        IconFileName: 'Git_icon.svg'
+        Tooltip: "Source Repository"
+        Hyperlink: "https://github.com/cloudbase/powershell-yaml"
+        
+      Name:
+        #When you just have a label
+        Description: "powershell-yaml"
+```
+
+### About Columns Position
+Columns position is setted ColumnPosition Attribute in CellItem, if two columns have the same position, the last one will overwrite, if no columns is specified it will be randomed inserted.
+```yaml
+ColumnPosition: 1
+```
 
 
 ### Contact?
@@ -137,3 +171,4 @@ See the illustration bellow:
   <svg width="42px" height="42"...
   ```
 - This site uses github web_page enabled to export the png files.
+
