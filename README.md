@@ -15,9 +15,9 @@ In reusme just a collection of actions that are visible by big buttons and acess
 
 ## Acessible and Visible 
 
-Well if you are a developer you know that you have to remember a lot of links, and there a newcomers to your teams, and if you are growing up in microservices archtecture maybe you have a lot more actions than a usual application has.
+Well if you are a developer you know that you have to remember a lot of links, and so  newcomers can join and we should explain that, and if you are growing up in microservices archtecture maybe you have a lot more actions than a usual application has.
 
-This is where we can try use ideas inspired by Streamdeck to just be a place where we can be "visible & acessible"
+This is where we can try use ideas inspired by Streamdeck to just be a place where we can focus on **visible** and **acessible**.
 
 ### Example of streamdeck for this project
 
@@ -108,7 +108,7 @@ See the illustration bellow:
 
 
 
-5. **Example from this page : **
+5. **Example used on the markdown you are reading.**
 
 ![usage-in-this-site.png](https://lkobus.github.io/markdown-streamdeck/res/usage-in-this-site.png)
 
