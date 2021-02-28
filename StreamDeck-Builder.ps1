@@ -115,7 +115,7 @@ Function BuildMarkdownIconButton($content) {
 }
 
 Function GetIconUri($content) {
-    return Join-Path $content["IconUriPath"] $content["IconFileName"]
+    return $content["IconUriPath"] + "/" + $content["IconFileName"]
 }
 
 GenerateCsv $yamlInput $outputCsv

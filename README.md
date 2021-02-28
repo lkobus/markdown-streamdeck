@@ -24,17 +24,19 @@ This is where we can try use ideas inspired by Streamdeck to just be a place whe
 
 - **Services**
 
-|Lang                                                         |Git                                                                                                    |PoweredBy|
-|-------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|---------|
-|![powershell-icon.svg](\res\powershell-icon.svg "Powershell")|[![Git_icon.svg](\res\Git_icon.svg)](https://github.com/lkobus/markdown-streamdeck "Source Repository")|~Dashman |
+|Git                                                          |PoweredBy                                                                                              |Lang                                                                                                      |
+|-------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|
+|[![Git_icon.svg](https://lkobus.github.io/markdown-streamdeck/res//Git_icon.svg)](https://github.com/lkobus/markdown-streamdeck "Source Repository")|~Dashman                                                                                               |![powershell-icon.svg](https://lkobus.github.io/markdown-streamdeck/res//powershell-icon.svg "Powershell")|
+
 
 ---
 
 - **Libs**
 
-|Git                                                          |Lang                                                                                                   |
-|-------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
-|[![Git_icon.svg](\res\Git_icon.svg)](https://github.com/cloudbase/powershell-yaml "Source Repository")|![powershell-icon.svg](\res\powershell-icon.svg "Powershell")                                          |
+|Lang                                                         |Name                                                                                                   |Git                                                                                                       |
+|-------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|
+|![powershell-icon.svg](https://lkobus.github.io/markdown-streamdeck/res//powershell-icon.svg "Powershell")|powershell-yaml                                                                                        |[![Git_icon.svg](https://lkobus.github.io/markdown-streamdeck/res//Git_icon.svg)](https://github.com/cloudbase/powershell-yaml "Source Repository")|
+
 
 ---
 
@@ -55,12 +57,12 @@ You can start with the example that exist in the repository named "micro_service
 Services:
   - streamdeck-builder:
       Lang:        
-        IconUriPath: '/res'
+        IconUriPath: 'https://lkobus.github.io/markdown-streamdeck/res/'
         IconFileName: 'powershell-icon.svg'
         Tooltip: "Powershell"      
       Git:
         ColumnPosition: 1
-        IconUriPath: "/res"
+        IconUriPath: "https://lkobus.github.io/markdown-streamdeck/res/"
         IconFileName: 'Git_icon.svg'
         Tooltip: "Source Repository"
         Hyperlink: "https://github.com/lkobus/markdown-streamdeck"
@@ -70,16 +72,17 @@ Services:
 Libs:
   - powershell-yaml:
       Lang:
-        IconUriPath: '/res'
+        IconUriPath: 'https://lkobus.github.io/markdown-streamdeck/res/'
         IconFileName: 'powershell-icon.svg'
         Tooltip: "Powershell"       
       Git:      
-        IconUriPath: "/res"
+        IconUriPath: "https://lkobus.github.io/markdown-streamdeck/res/"
         IconFileName: 'Git_icon.svg'
         Tooltip: "Source Repository"
         Hyperlink: "https://github.com/cloudbase/powershell-yaml"
       Name:
         Description: "powershell-yaml"
+      
       
 ```
 ~*micro_services.yaml File*
@@ -100,12 +103,16 @@ The CSV now is wrapped correctly with the links you builded in markdown, now you
 Usualy i just get the CSV content, copy and paste in this site called [convertcsv](https://www.convertcsv.com/csv-to-markdown.htm), get the result and paste it in my markdown site.
 
 See the illustration bellow:
-![to-markdown.png](res/to-markdown.png)
+![to-markdown.png](https://lkobus.github.io/markdown-streamdeck/res/to-markdown.png)
+
+
 
 
 5. **Example from this page : **
 
-![usage-in-this-site.png](res/usage-in-this-site.png)
+![usage-in-this-site.png](https://lkobus.github.io/markdown-streamdeck/res/usage-in-this-site.png)
+
+
 ---
 
 ---
@@ -125,3 +132,4 @@ See the illustration bellow:
   ```html  
   <svg width="42px" height="42"...
   ```
+- This site uses github web_page enabled to export the png files.

@@ -1,12 +1,12 @@
 Services:
   - streamdeck-builder:
       Lang:        
-        IconUriPath: '/res'
+        IconUriPath: 'https://lkobus.github.io/markdown-streamdeck/res/'
         IconFileName: 'powershell-icon.svg'
         Tooltip: "Powershell"      
       Git:
         ColumnPosition: 1
-        IconUriPath: "/res"
+        IconUriPath: "https://lkobus.github.io/markdown-streamdeck/res/"
         IconFileName: 'Git_icon.svg'
         Tooltip: "Source Repository"
         Hyperlink: "https://github.com/lkobus/markdown-streamdeck"
@@ -16,11 +16,11 @@ Services:
 Libs:
   - powershell-yaml:
       Lang:
-        IconUriPath: '/res'
+        IconUriPath: 'https://lkobus.github.io/markdown-streamdeck/res/'
         IconFileName: 'powershell-icon.svg'
         Tooltip: "Powershell"       
       Git:      
-        IconUriPath: "/res"
+        IconUriPath: "https://lkobus.github.io/markdown-streamdeck/res/"
         IconFileName: 'Git_icon.svg'
         Tooltip: "Source Repository"
         Hyperlink: "https://github.com/cloudbase/powershell-yaml"
