@@ -44,6 +44,10 @@ This is where we can try use ideas inspired by Streamdeck to just be a place whe
 
 This script was tested using Windows 10, but i think it can rune fine in Ubuntu too.
 
+0. **Install the powershell-yaml dependency.**
+```ps
+Install-Module powershell-yaml
+```
 
 1. **First Download the script**
 
