@@ -152,11 +152,12 @@ Libs:
 ```
 
 ### About Columns Position
-Columns position is setted ColumnPosition Attribute in CellItem, if two columns have the same position, the last one will overwrite, if no columns is specified it will be randomed inserted.
+Columns position is setted in ColumnPosition Attribute inside each CellItem. If two columns have the same position, the last one will overwrite, if no columns is specified it will be randomed inserted.
 ```yaml
 ColumnPosition: 1
 ```
 
+> Remember this is a table parsed yaml, so all cell items should have the same ammount of CellItems.
 
 ### Contact?
 
