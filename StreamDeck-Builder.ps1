@@ -23,6 +23,10 @@ General notes
 #>
 Function GenerateCsv($yamlInput, $outputCsv){
     $yamlInput = Get-Content $yamlInput | ConvertFrom-Yaml
+    if($null -ne $yamlInput.IconUriPath){ 
+        $global:IconUriPath = $yamlInput.IconUriPath
+    }
+    
     GenerateCsvOutput $yamlInput.Services $outputCsv
     GenerateCsvOutput $yamlInput.Libs ($outputCsv.Replace('.csv', '-libs.csv'))
 }
@@ -115,7 +119,11 @@ Function BuildMarkdownIconButton($content) {
 }
 
 Function GetIconUri($content) {
-    return $content["IconUriPath"] + "/" + $content["IconFileName"]
+    $uriPath = $global:IconUriPath
+    if($null -ne $content["IconUriPath"]) {
+        $uriPath = $content["IconUriPath"]
+    }
+    return $uriPath.Trim('/') + "/" + $content["IconFileName"]
 }
 
 GenerateCsv $yamlInput $outputCsv

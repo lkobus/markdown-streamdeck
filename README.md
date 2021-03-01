@@ -27,6 +27,8 @@ This is where we can try use ideas inspired by Streamdeck to just be a place whe
 |Git                                                          |PoweredBy                                                                                              |Lang                                                                                                      |
 |-------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|
 |[![Git_icon.svg](https://lkobus.github.io/markdown-streamdeck/res//Git_icon.svg)](https://github.com/lkobus/markdown-streamdeck "Source Repository")|~Dashman                                                                                               |![powershell-icon.svg](https://lkobus.github.io/markdown-streamdeck/res//powershell-icon.svg "Powershell")|
+|[![Git_icon.svg](https://lkobus.github.io/markdown-streamdeck/res//Git_icon.svg)](https://github.com/lkobus/markdown-streamdeck "Source Repository")|~Dashman                                                                                               |![powershell-icon.svg](https://lkobus.github.io/markdown-streamdeck/res//powershell-icon.svg "Powershell")|
+
 
 
 ---
@@ -124,10 +126,10 @@ See the illustration bellow:
 **The yaml structure should always have**
 ```yaml
 Services:
-    - CellItem
+    - CellItem:
     ...
-Libs
-    - CellItem
+Libs:
+    - CellItem:
     ...
 ```
 
@@ -158,6 +160,21 @@ ColumnPosition: 1
 ```
 
 > Remember this is a table parsed yaml, so all cell items should have the same ammount of properties, remember each child of Cellitem is a property that reflects a icon, link or text.
+
+### Global IconUriPath
+If you dont wanna specify IconUriPath all the time you can use the global version to just set one time like this example in the root of the document: 
+```yaml
+IconUriPath: 'https://lkobus.github.io/markdown-streamdeck/res/' 
+Services:
+  - streamdeck-builder:
+      Lang:                
+        IconFileName: 'powershell-icon.svg'
+        Tooltip: "Powershell"      
+Libs:
+    - CellItem
+    ...
+```
+*If IconUriPath dont exist it will look for the global version.*
 
 ### Contact?
 

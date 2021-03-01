@@ -1,5 +1,19 @@
+IconUriPath: 'https://lkobus.github.io/markdown-streamdeck/res/'
 Services:
   - streamdeck-builder:
+      Lang:        
+        IconUriPath: 'https://lkobus.github.io/markdown-streamdeck/res/'
+        IconFileName: 'powershell-icon.svg'
+        Tooltip: "Powershell"      
+      Git:
+        ColumnPosition: 1        
+        IconFileName: 'Git_icon.svg'
+        Tooltip: "Source Repository"
+        Hyperlink: "https://github.com/lkobus/markdown-streamdeck"
+      PoweredBy:       
+        ColumnPosition: 2
+        Description: "~Dashman"  
+  - outra-parada:
       Lang:        
         IconUriPath: 'https://lkobus.github.io/markdown-streamdeck/res/'
         IconFileName: 'powershell-icon.svg'
