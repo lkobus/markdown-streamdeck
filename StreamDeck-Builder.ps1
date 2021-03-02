@@ -122,8 +122,8 @@ Function GetIconUri($content) {
     $uriPath = $global:IconUriPath
     if($null -ne $content["IconUriPath"]) {
         $uriPath = $content["IconUriPath"]
-    }
-    return $uriPath.Trim('/') + "/" + $content["IconFileName"]
+    }    
+    return $uriPath.TrimEnd('/') + "/" + $content["IconFileName"]
 }
 
 GenerateCsv $yamlInput $outputCsv
