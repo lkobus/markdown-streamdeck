@@ -2,41 +2,63 @@ param($yamlInput, $outputCsv)
 
 Import-Module powershell-yaml
 
-<#
-.SYNOPSIS
-# Generates csv outputs
-
-.DESCRIPTION
-Convert a YAML to csv
-
-.PARAMETER yamlInput
-Parameter the yaml
-
-.PARAMETER outputCsv
-Parameter the output
-
-.EXAMPLE
-An example
-
-.NOTES
-General notes
-#>
-Function GenerateCsv($yamlInput, $outputCsv){
+Function GenerateMd($yamlInput, $outputCsv){
     $yamlInput = Get-Content $yamlInput | ConvertFrom-Yaml
     if($null -ne $yamlInput.IconUriPath){ 
         $global:IconUriPath = $yamlInput.IconUriPath
     }
     
-    GenerateCsvOutput $yamlInput.Services $outputCsv
-    GenerateCsvOutput $yamlInput.Libs ($outputCsv.Replace('.csv', '-libs.csv'))
+    GenerateMdOutput $yamlInput.Services $outputCsv
+
+    if($null -ne $yamlInput.Libs){
+        GenerateMdOutput $yamlInput.Libs ($outputCsv.Replace('.md', '-libs.md'))    
+    }
+    
+    if($null -ne $yamlInput.Jobs){
+        GenerateMdOutput $yamlInput.Jobs ($outputCsv.Replace('.md', '-jobs.md'))
+    }
+    
 }
 
-Function GenerateCsvOutput($collection, $output) {
+Function GenerateMdOutput($collection, $output) {
     $result = FetchCsvModel $collection
+
+    $first = $true
+    $mdResult = @()
+    $result | ForEach-Object { 
+        if($first) {
+            $first = $false
+            $mdResult += BuildMdTableContent $_
+            $mdResult += BuildMdTableSpecs $_
+        } else {
+            $mdResult += BuildMdTableContent $_
+        }
+    }
+
     if(Test-Path $output) { Clear-Content $output }    
-    $result | ForEach-Object { Add-Content $output $_ }
+    $mdResult | ForEach-Object { Add-Content $output $_ }
+    
 }
 
+Function BuildMdTableContent($content) {
+    $headers = $_.Split(';')           
+    $result = "| "
+    $headers | foreach { 
+        $result = ($result + $_ + " | ")
+    }
+    $result = $result.TrimEnd()
+    return $result
+}
+
+Function BuildMdTableSpecs($headers) {
+    $headers = $_.Split(';')           
+    $result = "|:--"
+    $headers | foreach { 
+        $result = ($result + "--:|:--")
+    }
+    $result = $result.TrimEnd('-').TrimEnd('-').TrimEnd(':')
+    return $result
+}
 
 Function FetchCsvModel ($inputResource) {
     $first = $true
@@ -126,5 +148,5 @@ Function GetIconUri($content) {
     return $uriPath.TrimEnd('/') + "/" + $content["IconFileName"]
 }
 
-GenerateCsv $yamlInput $outputCsv
+GenerateMd $yamlInput $outputCsv
 #GenerateCsv .\micro_services.yaml .\out.csv

@@ -97,38 +97,30 @@ Libs:
 3. **For generating the output you should run**
 
 ```ps1
-$script_dir> .\StreamDeck-Builder.ps1 -yamlInput .\micro_services.yaml -outputCsv .\out.csv
+$script_dir> .\StreamDeck-Builder.ps1 -yamlInput .\micro_services.yaml -outputCsv .\out.md
 ```
 
-> This will create two tables "out.csv" for the "Services" and "out-libs.csv" for the Libs.
-
-4. **Generating the markdown table**
-
-The CSV now is wrapped correctly with the links you builded in markdown, now you can just use tools that convert "CSV to Markdown table" and you should have the template to past it in your Markdown Page.
-
-Usualy i just get the CSV content, copy and paste in this site called [convertcsv](https://www.convertcsv.com/csv-to-markdown.htm), get the result and paste it in my markdown site.
-
-See the illustration bellow:
-![to-markdown.png](https://lkobus.github.io/markdown-streamdeck/res/to-markdown.png)
+> This will create two tables "out.md" for the "Services" and "out-libs.md" for the Libs.
 
 
 
-
-5. **Example used on the markdown you are reading.**
+4. **Just copy and paste the generated markdowns in your .md**
 
 ![usage-in-this-site.png](https://lkobus.github.io/markdown-streamdeck/res/usage-in-this-site.png)
-
 
 ---
 
 
 ## Yaml Structure 
-**The yaml structure should always have**
+**The yaml structure can have the follow root attributes**
 ```yaml
 Services:
     - CellItem:
     ...
 Libs:
+    - CellItem:
+    ...
+Jobs:
     - CellItem:
     ...
 ```
@@ -174,11 +166,11 @@ Libs:
     - CellItem
     ...
 ```
-*If IconUriPath dont exist it will look for the global version.*
+*If IconUriPath is missing in CellItem it will look for the global property.*
 
 ### Contact?
 
-- Fell free to contribute, and if you wanna get in touch reach me in linkedin ("leonardo kobus BR")
+- Fell free to contribute, and if you wanna get in touch reach me in [linkedin](https://www.linkedin.com/in/leonardo-kobus-73125857/)
 
 ### Final considerations
 - Maybe for you run the powershell you should give a permission to "unsigned script". 
@@ -188,5 +180,5 @@ Libs:
   ```html  
   <svg width="42px" height="42"...
   ```
-- This site uses github web_page enabled to export the png files.
+- This site uses github web_page enabled to export the png files to link the resources in this markdown.
 
